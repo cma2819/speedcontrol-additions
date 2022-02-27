@@ -3,6 +3,6 @@ node_modules
 coverage
 bower_components
 
-#NodeCG builds
-# /dashboard
-# /extension
+# NodeCG
+/cfg
+/db

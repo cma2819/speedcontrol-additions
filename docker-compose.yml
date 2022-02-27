@@ -1,0 +1,12 @@
+services:
+  speedcontrol-additions:
+    image: speedcontrol-additions
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ".:/nodecg/bundles/speedcontrol-additions"
+      - ./cfg:/nodecg/cfg
+      - ./db:/nodecg/db
+    ports:
+      - "9090:9090"
