@@ -9,5 +9,4 @@ export interface HoraroImportStatus {
 	importing?: boolean;
 	item?: number;
 	total?: number;
-	[k: string]: any;
 }

@@ -3,11 +3,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.importUserAddition = void 0;
 var tslib_1 = require("tslib");
 var helper_1 = require("./lib/helper");
+var uuid_1 = require("uuid");
 // eslint-disable-next-line @typescript-eslint/camelcase
 var importUserAddition = function (nodecg, spreadsheet) {
     var logger = new nodecg.Logger(nodecg.bundleName + ":import-user-addition");
     var userAdditionArrayRep = nodecg.Replicant('speedcontrolUserAdditionArray');
-    var importAdditionFromSpreadsheet = function (url, sheetName, runnerIdIndex, nicoIndex, youtubeIndex, twitterIndex) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
+    var speedcontrolPlayerArrayRep = nodecg.Replicant('speedcontrolPlayerArray');
+    var findSpeedcontrolPlayerByName = function (name) {
+        var _a;
+        return ((_a = speedcontrolPlayerArrayRep.value) === null || _a === void 0 ? void 0 : _a.find(function (player) {
+            return player.name == name;
+        })) || null;
+    };
+    var importAdditionFromSpreadsheet = function (url, sheetName, nameIndex, nicoIndex, youtubeIndex, twitterIndex) { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
         var spreadsheetId, valueResponse, additionDataArray;
         return tslib_1.__generator(this, function (_a) {
             switch (_a.label) {
@@ -25,8 +33,9 @@ var importUserAddition = function (nodecg, spreadsheet) {
                     additionDataArray = valueResponse.data.values.filter(function (_, index) {
                         return index !== 0;
                     }).map(function (values) {
+                        var targetPlayer = findSpeedcontrolPlayerByName(values[nameIndex]);
                         return {
-                            id: values[runnerIdIndex],
+                            id: (targetPlayer === null || targetPlayer === void 0 ? void 0 : targetPlayer.id) || uuid_1.v4(),
                             social: {
                                 nico: values[nicoIndex] !== '' ? values[nicoIndex] : undefined,
                                 youtube: values[youtubeIndex] !== '' ? values[youtubeIndex] : undefined,
@@ -42,7 +51,7 @@ var importUserAddition = function (nodecg, spreadsheet) {
     nodecg.listenFor('importAdditionFromSpreadsheet', function (_a, ack) {
         var url = _a.url, sheetName = _a.sheetName, indexes = _a.indexes;
         try {
-            ack(null, importAdditionFromSpreadsheet(url, sheetName, indexes.runnerId, indexes.nico, indexes.youtube, indexes.twitter));
+            ack(null, importAdditionFromSpreadsheet(url, sheetName, indexes.name, indexes.nico, indexes.youtube, indexes.twitter));
         }
         catch (err) {
             logger.error(err);

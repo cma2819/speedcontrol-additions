@@ -28,9 +28,9 @@ var speedcontrolUserAddition = function (nodecg) {
         speedcontrolPlayers.value = filteredPlayers;
         userAdditionArray.value = filteredPlayers.map(function (player) {
             return userAdditionArray.value.find(function (userAddition) {
-                return player.customData.oengusId === userAddition.id;
+                return player.id === userAddition.id;
             }) || {
-                id: player.customData.oengusId,
+                id: player.id,
                 social: {}
             };
         });

@@ -4,7 +4,8 @@
     "additionalProperties": false,
     "properties": {
         "googleApiKey": {
-            "type": "string"
+            "type": "string",
+            "default": "<Google API Key>"
         }
     }
 }

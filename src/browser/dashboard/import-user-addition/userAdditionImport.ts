@@ -28,7 +28,7 @@ class UserAdditionImport extends ImportModule {
     }
     
     @Action
-    public importAddition({sheetIndex, indexes}: {sheetIndex: number; indexes: {runnerId: number; nico: number; youtube: number; twitter: number}}): void {
+    public importAddition({sheetIndex, indexes}: {sheetIndex: number; indexes: {name: number; nico: number; youtube: number; twitter: number}}): void {
         this._startImport();
         nodecg.sendMessage('importAdditionFromSpreadsheet', {
             url: this.spreadsheetUrl,

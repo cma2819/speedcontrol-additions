@@ -20,18 +20,6 @@
         <v-chip
           label
           small
-          class="mr-1 mb-1"
-          color="#dddddd"
-          text-color="#000000"
-        >
-          ext
-        </v-chip>
-        {{ player.externalID || '-' }}
-      </div>
-      <div>
-        <v-chip
-          label
-          small
           class="mr-1 mb-2"
           :color="colors.twitch.primary"
           :text-color="colors.twitch.text"

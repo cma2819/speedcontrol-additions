@@ -9,5 +9,4 @@ export interface OengusImportStatus {
 	importing?: boolean;
 	item?: number;
 	total?: number;
-	[k: string]: any;
 }
