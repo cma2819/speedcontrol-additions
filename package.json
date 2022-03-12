@@ -80,7 +80,8 @@
     "start": "node ../..",
     "test": "echo \"Error: no test specified\" && exit 1",
     "schema-types": "nodecg schema-types -o src/nodecg/generated schemas",
-    "schema-lib-types": "nodecg schema-types -o src/nodecg/generated --no-config-schema schemas/lib"
+    "schema-lib-types": "nodecg schema-types -o src/nodecg/generated --no-config-schema schemas/lib",
+    "schema-ext-types": "nodecg schema-types -o src/nodecg/external/speedcontrol --no-config-schema ../nodecg-speedcontrol/schemas"
   },
   "repository": {
     "type": "git",

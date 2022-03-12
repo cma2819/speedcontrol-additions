@@ -39,13 +39,13 @@ export default class AdditionUserList extends Vue {
   }[] {
     return this.userAdditionArray.map((userAddition: SpeedcontrolUserAddition) => {
       const speedcontrolPlayer = this.playerArray.find((player: SpeedcontrolPlayer) => {
-        return player.customData.oengusId === userAddition.id;
+        return player.id === userAddition.id;
       });
       return {
         player: speedcontrolPlayer,
         userAddition: userAddition
       };
-    }).filter(user => user.player !== undefined);
+    });
   }
 }
 </script>

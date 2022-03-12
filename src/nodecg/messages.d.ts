@@ -37,7 +37,7 @@ export type MessageMap = {
       url: string;
       sheetName: string;
       indexes: {
-        runnerId: number;
+        name: number;
         nico: number;
         youtube: number;
         twitter: number;

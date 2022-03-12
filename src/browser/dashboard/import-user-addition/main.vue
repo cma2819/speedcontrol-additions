@@ -55,11 +55,11 @@
           :cols="4"
         >
           <v-select
-            v-model="runnerIdIndex"
+            v-model="runnerNameIndex"
             :items="columnItems"
             :menu-props="{top: true, offsetY: true}"
             :disabled="!isSheetSelected"
-            label="Runner ID"
+            label="Runner Name"
             dense
           ></v-select>
         </v-col>
@@ -124,7 +124,7 @@ import { userAdditionImportModule } from './userAdditionImport';
 export default class App extends Vue {
   spreadsheetUrl = '';
   sheetIndex = -1;
-  runnerIdIndex = -1;
+  runnerNameIndex = -1;
   nicoIndex = -1;
   youtubeIndex = -1;
   twitterIndex = -1;
@@ -150,7 +150,7 @@ export default class App extends Vue {
   }
 
   get isColumnsSelected (): boolean {
-    if (this.nicoIndex < 0 || this.youtubeIndex < 0 || this.runnerIdIndex < 0 || this.twitterIndex < 0) {
+    if (this.nicoIndex < 0 || this.youtubeIndex < 0 || this.runnerNameIndex < 0 || this.twitterIndex < 0) {
       return false;
     }
     return true;
@@ -177,7 +177,7 @@ export default class App extends Vue {
   @Emit()
   loadSpreadsheet(): void {
     this.sheetIndex = -1;
-    this.runnerIdIndex = -1;
+    this.runnerNameIndex = -1;
     this.nicoIndex = -1;
     this.youtubeIndex = -1;
     this.twitterIndex = -1;
@@ -194,7 +194,7 @@ export default class App extends Vue {
     userAdditionImportModule.importAddition({
       sheetIndex: this.sheetIndex,
       indexes: {
-        runnerId: this.runnerIdIndex,
+        name: this.runnerNameIndex,
         nico: this.nicoIndex,
         youtube: this.youtubeIndex,
         twitter: this.twitterIndex

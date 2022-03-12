@@ -21,6 +21,7 @@ export default class ImportDialog extends VuexModule {
     @Mutation
     protected _finishLoad(): void {
         this.isLoading = false;
+        this.isCompleted = false;
     }
 
     @Mutation
