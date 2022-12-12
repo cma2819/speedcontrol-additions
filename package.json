@@ -118,7 +118,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "clone": "^2.1.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "googleapis": "^47.0.0",
     "spotify-web-api-node": "^4.0.0",
