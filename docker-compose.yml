@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
-      - ".:/nodecg/bundles/speedcontrol-additions"
-      - ./cfg:/nodecg/cfg
-      - ./db:/nodecg/db
+      - ".:/opt/nodecg/bundles/speedcontrol-additions"
+      - ./cfg:/opt/nodecg/cfg
+      - ./db:/opt/nodecg/db
     ports:
       - "9090:9090"
