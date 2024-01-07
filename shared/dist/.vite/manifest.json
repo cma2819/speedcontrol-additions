@@ -1,0 +1,148 @@
+{
+  "_ExpandMore-SQAnb6n7.js": {
+    "file": "ExpandMore-SQAnb6n7.js",
+    "imports": [
+      "_Grid-7N0pHnBJ.js",
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_nodecg-jiKkhIrU.js"
+    ]
+  },
+  "_Grid-7N0pHnBJ.js": {
+    "file": "Grid-7N0pHnBJ.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx"
+    ]
+  },
+  "_listItemIconClasses-Mud6W5Wk.js": {
+    "file": "listItemIconClasses-Mud6W5Wk.js",
+    "imports": [
+      "_Grid-7N0pHnBJ.js"
+    ]
+  },
+  "_nodecg-!~{009}~.js": {
+    "file": "nodecg-mS7qiaDX.css",
+    "src": "_nodecg-!~{009}~.js"
+  },
+  "_nodecg-jiKkhIrU.js": {
+    "assets": [
+      "fa-brands-400-vfWL-IA9.woff2",
+      "fa-brands-400-7WSgTNmj.ttf",
+      "fa-regular-400-DjrD39cY.woff2",
+      "fa-regular-400-TBaJECdl.ttf",
+      "fa-solid-900-wCNuHzbQ.woff2",
+      "fa-solid-900-zNLXiXYJ.ttf",
+      "fa-v4compatibility-Gkfbzimj.woff2",
+      "fa-v4compatibility-BdHZVUy0.ttf"
+    ],
+    "css": [
+      "nodecg-mS7qiaDX.css"
+    ],
+    "file": "nodecg-jiKkhIrU.js",
+    "imports": [
+      "_Grid-7N0pHnBJ.js",
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx"
+    ]
+  },
+  "_spreadsheet-loader-NULJPBd-.js": {
+    "file": "spreadsheet-loader-NULJPBd-.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_Grid-7N0pHnBJ.js",
+      "_nodecg-jiKkhIrU.js",
+      "_listItemIconClasses-Mud6W5Wk.js"
+    ]
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "fa-brands-400-7WSgTNmj.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "fa-brands-400-vfWL-IA9.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
+    "file": "fa-regular-400-TBaJECdl.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "fa-regular-400-DjrD39cY.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "fa-solid-900-zNLXiXYJ.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "fa-solid-900-wCNuHzbQ.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
+    "file": "fa-v4compatibility-BdHZVUy0.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
+    "file": "fa-v4compatibility-Gkfbzimj.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
+  },
+  "src/browser/dashboard/pages/commentators.tsx": {
+    "file": "commentators-KkUoW_fI.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_Grid-7N0pHnBJ.js",
+      "_nodecg-jiKkhIrU.js",
+      "_ExpandMore-SQAnb6n7.js",
+      "_listItemIconClasses-Mud6W5Wk.js"
+    ],
+    "isEntry": true,
+    "src": "src/browser/dashboard/pages/commentators.tsx"
+  },
+  "src/browser/dashboard/pages/dialog-import-commentator.tsx": {
+    "file": "dialog-import-commentator-Zl_WlTxq.js",
+    "isEntry": true,
+    "src": "src/browser/dashboard/pages/dialog-import-commentator.tsx"
+  },
+  "src/browser/dashboard/pages/import-commentator.tsx": {
+    "file": "import-commentator-3gJiYvIC.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_Grid-7N0pHnBJ.js",
+      "_spreadsheet-loader-NULJPBd-.js",
+      "_nodecg-jiKkhIrU.js",
+      "_listItemIconClasses-Mud6W5Wk.js"
+    ],
+    "isEntry": true,
+    "src": "src/browser/dashboard/pages/import-commentator.tsx"
+  },
+  "src/browser/dashboard/pages/import-control.tsx": {
+    "file": "import-control--VuPCZDn.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_Grid-7N0pHnBJ.js"
+    ],
+    "isEntry": true,
+    "src": "src/browser/dashboard/pages/import-control.tsx"
+  },
+  "src/browser/dashboard/pages/import-user-addition.tsx": {
+    "file": "import-user-addition-wwlZjysz.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_Grid-7N0pHnBJ.js",
+      "_spreadsheet-loader-NULJPBd-.js",
+      "_nodecg-jiKkhIrU.js",
+      "_listItemIconClasses-Mud6W5Wk.js"
+    ],
+    "isEntry": true,
+    "src": "src/browser/dashboard/pages/import-user-addition.tsx"
+  },
+  "src/browser/dashboard/pages/user-addition.tsx": {
+    "file": "user-addition-qJ_iUsos.js",
+    "imports": [
+      "src/browser/dashboard/pages/dialog-import-commentator.tsx",
+      "_Grid-7N0pHnBJ.js",
+      "_ExpandMore-SQAnb6n7.js",
+      "_nodecg-jiKkhIrU.js"
+    ],
+    "isEntry": true,
+    "src": "src/browser/dashboard/pages/user-addition.tsx"
+  }
+}

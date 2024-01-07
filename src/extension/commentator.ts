@@ -1,6 +1,6 @@
 import { v4 as uuid} from 'uuid';
 import { Commentator } from '../nodecg/generated/commentator';
-import { NodeCG } from './nodecg';
+import { BundleNodecgInstance, NodeCG } from './nodecg';
 
 type Social = {
   twitch?: string;
@@ -9,7 +9,9 @@ type Social = {
   twitter?: string;
 }
 
-export const commentator = (nodecg: NodeCG): void => {
+export const commentator = (_nodecg: NodeCG): void => {
+  const nodecg = _nodecg as BundleNodecgInstance
+
   const logger = new nodecg.Logger(`${nodecg.bundleName}:commentator`);
   const commentatorArrayRep = nodecg.Replicant('commentatorArray', {
       defaultValue: []
@@ -37,7 +39,12 @@ export const commentator = (nodecg: NodeCG): void => {
     commentatorArrayRep.value.push({
       id: uuid(),
       name,
-      social,
+      social : {
+        twitch: social.twitch !== '' ? social.twitch : undefined,
+        nico: social.nico !== '' ? social.nico : undefined,
+        youtube: social.youtube !== '' ? social.youtube : undefined,
+        twitter: social.twitter !== '' ? social.twitter : undefined,
+      },
       assignedRunIdArray: assigned
     });
 

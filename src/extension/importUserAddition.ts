@@ -1,16 +1,15 @@
 import { NodeCG } from './nodecg';
-// eslint-disable-next-line @typescript-eslint/camelcase
 import { sheets_v4 } from 'googleapis';
 import { googleSpreadsheetUrlToId } from './lib/helper';
 import { SpeedcontrolUserAdditionArray } from '../nodecg/replicants';
-import { SpeedcontrolPlayer } from '../nodecg/generated';
 import { v4 as uuidv4 } from 'uuid';
+import { SpeedcontrolPlayer } from '../nodecg/generated/speedcontrolPlayer';
+import { BundleNodecgInstance } from './nodecg';
 
-// eslint-disable-next-line @typescript-eslint/camelcase
 export const importUserAddition = (nodecg: NodeCG, spreadsheet: sheets_v4.Sheets): void => {
     const logger = new nodecg.Logger(`${nodecg.bundleName}:import-user-addition`);
-    const userAdditionArrayRep = nodecg.Replicant('speedcontrolUserAdditionArray');
-    const speedcontrolPlayerArrayRep = nodecg.Replicant('speedcontrolPlayerArray');
+    const userAdditionArrayRep = (nodecg as BundleNodecgInstance).Replicant('speedcontrolUserAdditionArray');
+    const speedcontrolPlayerArrayRep = (nodecg as BundleNodecgInstance).Replicant('speedcontrolPlayerArray');
 
     const findSpeedcontrolPlayerByName = (name: string): SpeedcontrolPlayer|null => {
       return speedcontrolPlayerArrayRep.value?.find((player) => {
@@ -46,8 +45,7 @@ export const importUserAddition = (nodecg: NodeCG, spreadsheet: sheets_v4.Sheets
         userAdditionArrayRep.value = additionDataArray;
         return true;
     }
-
-    nodecg.listenFor('importAdditionFromSpreadsheet', ({url, sheetName, indexes}: {
+    (nodecg as BundleNodecgInstance).listenFor('importAdditionFromSpreadsheet', ({url, sheetName, indexes}: {
         url: string;
         sheetName: string;
         indexes: {

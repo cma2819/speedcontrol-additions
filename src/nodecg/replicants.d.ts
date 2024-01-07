@@ -1,17 +1,19 @@
-import { Assets } from "./asset";
+import { Assets } from './asset';
 import { GoogleApiDefined } from './generated/googleApiDefined';
 import { SpeedcontrolUserAdditionArray } from './generated/speedcontrolUserAdditionArray';
-import { SpeedcontrolPlayerArray } from "./generated/speedcontrolPlayerArray";
-import { CommentatorArray } from "./generated/commentatorArray";
-import { SpeedcontrolCurrentRunIndex } from "./generated/speedcontrolCurrentRunIndex";
+import { SpeedcontrolPlayerArray } from './generated/speedcontrolPlayerArray';
+import { CommentatorArray } from './generated/commentatorArray';
+import { SpeedcontrolCurrentRunIndex } from './generated/speedcontrolCurrentRunIndex';
+
+type Commentator = CommentatorArray[number];
 
 type ReplicantMap = {
-    assets: Assets,
-    commentatorArray: CommentatorArray,
-    googleApiDefined: GoogleApiDefined,
-    speedcontrolCurrentRunIndex: SpeedcontrolCurrentRunIndex,
-    speedcontrolUserAdditionArray: SpeedcontrolUserAdditionArray,
-    speedcontrolPlayerArray: SpeedcontrolPlayerArray,
+  assets: Assets;
+  commentatorArray: CommentatorArray;
+  googleApiDefined: GoogleApiDefined;
+  speedcontrolCurrentRunIndex: SpeedcontrolCurrentRunIndex;
+  speedcontrolUserAdditionArray: SpeedcontrolUserAdditionArray;
+  speedcontrolPlayerArray: SpeedcontrolPlayerArray;
 };
 
 type ReplicantName = (
@@ -22,13 +24,14 @@ type ReplicantName = (
     'speedcontrolPlayerArray'
 );
 
-export {
-    Assets,
-    CommentatorArray,
-    GoogleApiDefined,
-    SpeedcontrolCurrentRunIndex,
-    SpeedcontrolUserAdditionArray,
-    SpeedcontrolPlayerArray,
-    ReplicantMap,
-    ReplicantName
+export type {
+  Assets,
+  CommentatorArray,
+  Commentator,
+  GoogleApiDefined,
+  SpeedcontrolCurrentRunIndex,
+  SpeedcontrolUserAdditionArray,
+  SpeedcontrolPlayerArray,
+  ReplicantMap,
+  ReplicantName,
 };
