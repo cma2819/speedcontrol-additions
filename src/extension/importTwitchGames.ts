@@ -1,12 +1,10 @@
-import { NodeCG, SpeedcontrolNodeCG } from './nodecg';
-// eslint-disable-next-line @typescript-eslint/camelcase
+import { BundleNodecgInstance, NodeCG, SpeedcontrolInstance } from './nodecg';
 import { sheets_v4 } from 'googleapis';
 import { googleSpreadsheetUrlToId } from './lib/helper';
 
-// eslint-disable-next-line @typescript-eslint/camelcase
-export const importTwitchGames = (nodecg: NodeCG|SpeedcontrolNodeCG, spreadsheet: sheets_v4.Sheets): void => {
-	const additionsNodecg = nodecg as NodeCG;
-	const speedcontrolNodecg = nodecg as SpeedcontrolNodeCG;
+export const importTwitchGames = (nodecg: NodeCG, spreadsheet: sheets_v4.Sheets): void => {
+	const additionsNodecg = nodecg as BundleNodecgInstance;
+	const speedcontrolNodecg = nodecg as SpeedcontrolInstance;
 
     const logger = new additionsNodecg.Logger(`${additionsNodecg.bundleName}:import-twitch-games`);
     const speedcontrolRunDataArrayRep = speedcontrolNodecg.Replicant('runDataArray', 'nodecg-speedcontrol');

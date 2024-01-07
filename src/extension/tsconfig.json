@@ -8,7 +8,7 @@
       "outDir": "../../extension"
     },
     "include":[
-        "**/*.ts",
+        "./**/*.ts",
         "../nodecg/**/*.ts"
     ]
 }

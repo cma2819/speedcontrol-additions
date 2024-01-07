@@ -1,12 +1,12 @@
-import { NodeCG, SpeedcontrolNodeCG } from './nodecg';
+import { BundleNodecgInstance, NodeCG, SpeedcontrolInstance } from './nodecg';
 import { SpeedcontrolPlayer } from '../nodecg/generated/speedcontrolPlayer';
 import { SpeedcontrolUserAddition } from '../nodecg/generated/speedcontrolUserAddition';
 import { RunDataArray } from '../nodecg/external/speedcontrol/runDataArray';
 import clone from 'clone';
 
-export const speedcontrolUserAddition = (nodecg: NodeCG|SpeedcontrolNodeCG): void => {
-	const additionsNodecg = nodecg as NodeCG;
-	const speedcontrolNodecg = nodecg as SpeedcontrolNodeCG;
+export const speedcontrolUserAddition = (nodecg: NodeCG): void => {
+	const additionsNodecg = nodecg as BundleNodecgInstance;
+	const speedcontrolNodecg = nodecg as SpeedcontrolInstance;
 
     const logger = new additionsNodecg.Logger(`${additionsNodecg.bundleName}:user-addition`);
     const speedcontrolPlayers = additionsNodecg.Replicant('speedcontrolPlayerArray', {
@@ -46,11 +46,23 @@ export const speedcontrolUserAddition = (nodecg: NodeCG|SpeedcontrolNodeCG): voi
             return target.id === userAddition.id;
         });
         if (index >= 0) {
-            userAdditionArray.value[index] = userAddition;
+            userAdditionArray.value[index] = {
+                ... userAddition,
+                social: {
+                    nico: userAddition.social.nico !== '' ? userAddition.social.nico : undefined,
+                    youtube: userAddition.social.youtube !== '' ? userAddition.social.youtube : undefined,
+                    twitter: userAddition.social.twitter !== '' ? userAddition.social.twitter : undefined,
+                },
+            };
             logger.info(`Update user addition ${index}`);
         }
         return;
     }
 
-    additionsNodecg.listenFor('updateUserAddition', updateUserAddition);
+    additionsNodecg.listenFor('updateUserAddition', (data, cb) => {
+        if (cb && !cb.handled) {
+            updateUserAddition(data);
+            cb(null)
+        }
+    });
 }

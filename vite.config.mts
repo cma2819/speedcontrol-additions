@@ -10,11 +10,10 @@ export default defineConfig({
     react(),
     nodecg({
       bundleName: 'speedcontrol-additions',
-      dashboard: './src/browser/dashboard/pages/*.tsx',
-      graphics: './src/browser/graphics/pages/*.tsx'
+      dashboard: './src/browser/dashboard/pages/*.tsx'
       // extension: {
-      // 	input: "./src/extension/index.ts",
-      // 	plugins: [rollupEsbuild(), rollupExternals()],
+      // input: "./src/extension/index.ts",
+      // plugins: [rollupEsbuild(), rollupExternals()],
       // },
     })
   ]

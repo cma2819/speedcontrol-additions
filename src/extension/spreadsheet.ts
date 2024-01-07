@@ -1,11 +1,11 @@
-import { NodeCG } from './nodecg';
+import { BundleNodecgInstance } from './nodecg';
 import { google } from 'googleapis';
 import { importUserAddition } from './importUserAddition';
 import { importCommentator } from './importCommentator';
 import { googleSpreadsheetUrlToId } from './lib/helper';
 import { importTwitchGames } from './importTwitchGames';
 
-export const spreadsheet = (nodecg: NodeCG): void => {
+export const spreadsheet = (nodecg: BundleNodecgInstance): void => {
     const logger = new nodecg.Logger(`${nodecg.bundleName}:spreadsheet`);
     const googleApiDefinedRep = nodecg.Replicant('googleApiDefined', { defaultValue: false });
 

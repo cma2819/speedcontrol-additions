@@ -1,7 +1,6 @@
-import { SpeedcontrolUserAddition } from "./generated/speedcontrolUserAddition";
-import { SheetData } from '../types/SheetData';
-import { AdditionSocial } from './generated/additionSocial';
-import { Commentator } from './generated/commentator';
+import type { Commentator } from './generated/commentator';
+import type { SheetData } from '../types/SheetData';
+import type { SpeedcontrolUserAddition } from './generated/speedcontrolUserAddition';
 
 export type MessageMap = {
   'updateUserAddition': {
@@ -18,13 +17,13 @@ export type MessageMap = {
         twitter?: string;
       };
       assignedRunIdArray: string[];
-    }
-  }
+    };
+  };
   'updateCommentator': {
-    data: Commentator
+    data: Commentator;
   };
   'removeCommentator': {
-    data: string
+    data: string;
   };
 
   'loadSheetsFromSpreadsheet': {
@@ -41,10 +40,10 @@ export type MessageMap = {
         nico: number;
         youtube: number;
         twitter: number;
-      }
-    },
+      };
+    };
     result: boolean;
-  }
+  };
 
   'importCommentatorFromSpreadsheet': {
     data: {
@@ -57,10 +56,10 @@ export type MessageMap = {
         nico: number;
         youtube: number;
         twitter: number;
-      }
-    },
+      };
+    };
     result: boolean;
-  }
+  };
 
   'importTwitchGamesFromSpreadsheet': {
     data: {
@@ -68,7 +67,7 @@ export type MessageMap = {
       sheetName: string;
       lineIdIndex: number;
       gameNameIndex: number;
-    },
+    };
     result: boolean;
-  }
+  };
 };

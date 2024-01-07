@@ -23,7 +23,7 @@
         "name": "user-addition",
         "title": "User Addition",
         "width": 3,
-        "file": "user-addition/index.html",
+        "file": "user-addition.html",
         "headerColor": "#bcbcff",
         "workspace": "Info Addition"
       },
@@ -31,7 +31,7 @@
         "name": "import-control",
         "title": "Import Control",
         "width": 2,
-        "file": "import-control/index.html",
+        "file": "import-control.html",
         "headerColor": "#bcbcff",
         "workspace": "Info Addition"
       },
@@ -39,7 +39,7 @@
         "name": "commentators",
         "title": "Commentators",
         "width": 6,
-        "file": "commentators/index.html",
+        "file": "commentators.html",
         "headerColor": "#bcbcff",
         "workspace": "Info Addition"
       },
@@ -47,21 +47,14 @@
         "name": "import-user-addition",
         "title": "Import User Addition",
         "width": 6,
-        "file": "import-user-addition/index.html",
+        "file": "import-user-addition.html",
         "dialog": true
       },
       {
         "name": "import-commentator",
         "title": "Import Commentator",
         "width": 6,
-        "file": "import-commentator/index.html",
-        "dialog": true
-      },
-      {
-        "name": "import-twitch-games",
-        "title": "Import Twitch Games",
-        "width": 6,
-        "file": "import-twitch-games/index.html",
+        "file": "import-commentator.html",
         "dialog": true
       }
     ]
@@ -71,13 +64,13 @@
     "autofix": "run-s autofix:*",
     "autofix:browser": "eslint --fix --ext .ts,.vue src/browser",
     "autofix:extension": "eslint --fix --ext .ts src/extension",
-    "build": "run-s clean build:*",
-    "build:dashboard": "parcel build src/browser/dashboard/*/*.html --out-dir dashboard --public-url ./",
+    "build": "run-s build:*",
+    "build:dashboard": "vite build",
     "build:extension": "tsc -b src/extension/",
-    "clean": "trash .cache dashboard extension",
-    "dev": "run-s dev:dashboard",
+    "clean": "trash dashboard extension shared",
+    "dev": "run-p dev:*",
     "dev:dashboard": "vite",
-    "watch:extension": "tsc -b src/extension/ -w",
+    "dev:extension": "tsc -b src/extension/ -w",
     "start": "node ../..",
     "test": "echo \"Error: no test specified\" && exit 1",
     "schema-types": "nodecg schema-types -o src/nodecg/generated schemas",
@@ -94,6 +87,7 @@
   },
   "devDependencies": {
     "@types/clone": "^0.1.30",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^18.19.4",
     "@types/react-dom": "^18.2.18",
     "@types/uuid": "^3.4.9",
@@ -106,19 +100,24 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
     "globby": "^14.0.0",
+    "nodecg": "^2.1.12",
     "npm-run-all": "^4.1.5",
     "trash-cli": "^3.1.0",
     "ts-nodecg": "^0.3.1",
-    "typescript": "^4.9.5",
+    "typescript": "^5.3.3",
     "vite": "^5.0.10"
   },
   "dependencies": {
-    "@mui/material": "^5.15.2",
-    "@mui/styled-engine-sc": "^6.0.0-alpha.10",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@mui/icons-material": "^5.15.3",
+    "@mui/material": "^5.15.3",
     "clone": "^2.1.2",
     "googleapis": "^47.0.0",
-    "styled-components": "^6.1.6",
-    "tslib": "^1.14.1",
+    "lodash": "^4.17.21",
     "uuid": "^7.0.3"
   }
 }
