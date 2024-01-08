@@ -45,9 +45,11 @@ export const ColumnSelector = <K extends string[]>(
     if (importSheet !== '') {
       setColumns(sheets.find(d => d.name === importSheet)?.columns ?? []);
       setImportColumns(keys.map(_ => ''));
+      setIsDone(false);
     } else {
       setColumns([]);
       setImportColumns(keys.map(_ => ''));
+      setIsDone(false);
     }
   }, [importSheet]);
 
